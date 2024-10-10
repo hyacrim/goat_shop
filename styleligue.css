@@ -1,0 +1,103 @@
+/* Conteneur général des maillots */
+.maillots-container {
+    display: flex;
+    flex-wrap: wrap; /* Permet aux items de passer à la ligne quand il n'y a plus de place */
+    justify-content: flex-start; /* Aligne les items à gauche */
+    gap: 20px; /* Ajoute de l'espace entre les items */
+    padding: 20px;
+}
+
+/* Chaque maillot */
+.maillot-item {
+    background-color: #f9f9f9; /* Couleur de fond des cartes des maillots */
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    width: 200px; /* Fixe la largeur des items pour que plusieurs éléments s'alignent horizontalement */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Centrer les éléments à l'intérieur du maillot-item */
+    transition: transform 0.2s; /* Animation survol */
+}
+
+.maillot-item img {
+    max-width: 100%; /* L'image prend toute la largeur disponible dans son conteneur */
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Animation lors du survol des maillots */
+.maillot-item:hover {
+    transform: scale(1.05); /* Légère augmentation de la taille lors du survol */
+}
+
+/* Bouton d'envoi */
+.envoyer-btn {
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.envoyer-btn:hover {
+    background-color: #45a049;
+}
+
+/* Options de partage, initialement cachées */
+.share-options {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espace entre les boutons */
+    margin-top: 10px;
+}
+
+.share-options button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.share-options button img {
+    width: 24px;
+    height: 24px;
+}
+
+/* Responsiveness: ajustement pour les écrans plus petits */
+@media (max-width: 768px) {
+    .maillot-item {
+        width: 150px; /* Réduire la largeur pour les écrans plus petits */
+    }
+}
+
+@media (max-width: 480px) {
+    .maillot-item {
+        width: 100%; /* Chaque item occupe toute la largeur de l'écran sur les très petits écrans */
+    }
+}
+/* Style de la lightbox (fenêtre modale) */
+.lightbox {
+    display: none; /* La lightbox est masquée par défaut */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fond semi-transparent */
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* Assurez-vous que la lightbox est au-dessus de tout le reste */
+}
+
+.lightbox img {
+    max-width: 80%; /* L'image prend 80% de la largeur de la fenêtre */
+    max-height: 80%; /* L'image prend 80% de la hauteur de la fenêtre */
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.3); /* Ajouter un peu d'ombre pour l'effet */
+}
+
+.lightbox:active {
+    display: flex; /* Active la lightbox au clic */
+}
