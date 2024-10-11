@@ -7,19 +7,21 @@ function toggleShareOptions(button) {
         }
     }
 
-    function downloadImage(imageUrl) {
+    function downloadImage(imageSrc) {
         const link = document.createElement('a');
-        link.href = imageUrl;
-        link.download = imageUrl.split('/').pop();
+        link.href = imageSrc;
+        link.download = imageSrc.substring(imageSrc.lastIndexOf('/') + 1);
+        document.body.appendChild(link);
         link.click();
+        document.body.removeChild(link);
     }
-
-    function shareOnWhatsApp(imageSrc) {
-        const message = encodeURIComponent("Découvrez ce maillot : ");
-        const url = encodeURIComponent(imageSrc);
-        const whatsappUrl = `https://wa.me/?text=${message}${url}`;
+    
+    function shareOnWhatsApp() {
+        const message = encodeURIComponent("Découvrez ce maillot !");
+        const whatsappUrl = `https://wa.me/?text=${message}`;
         window.open(whatsappUrl, '_blank');
     }
+
     
     function shareOnTelegram(imageSrc) {
         const message = encodeURIComponent("Découvrez ce maillot : ");
