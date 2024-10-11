@@ -574,3 +574,66 @@ h1 {
     margin-top: 10px;
     font-weight: bold;
 }
+        /* Style pour centrer la vidéo et la rendre présentative */
+        .video-container {
+            position: relative;
+            width: 80%; /* Ajuste la largeur en fonction de la présentation souhaitée */
+            max-width: 800px; /* Limite la taille maximale */
+            margin: 20px auto; /* Centrer la vidéo sur la page */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ajouter une ombre pour l'effet 3D */
+            border-radius: 15px; /* Arrondir les coins de la vidéo */
+            overflow: hidden; /* Couper les parties qui dépassent de la boîte */
+        }
+
+        /* Stylisation des contrôles vidéo (si tu les veux visibles) */
+        video {
+            width: 100%; /* S'adapte à la taille du conteneur */
+            display: block;
+            border-radius: 15px; /* Arrondi également la vidéo */
+        }
+
+        /* Option : ajouter des effets de survol (hover) pour rendre plus interactif */
+        .video-container:hover {
+            transform: scale(1.05); /* Agrandir légèrement la vidéo au survol */
+            transition: all 0.3s ease-in-out;
+        }
+        /* Style pour la vidéo */
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            overflow: hidden;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+            border-radius: 15px;
+        }
+
+        /* Style du bouton mute/unmute */
+        .mute-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            z-index: 10;
+        }
+
+        .mute-btn:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+
+        /* Style des options de partage */
+        .share-options {
+            display: none;
+            margin-top: 10px;
+        }

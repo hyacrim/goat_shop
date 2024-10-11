@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Liga Portugal- Maillots</title>
+        <link rel="stylesheet" href="styleligue.css">
+        <!-- Lien vers FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
+<body>
+    <h1 class="">Autres ligue</h1>
+
+    <div class="maillots-container">
+
+        <div class="maillot-item">
+            <img src="./image/portugal/benefica ext.jpeg" alt="nice ext" onclick="openLightbox(this)">
+            <p>BENEFICA ext</p>
+            <!-- Bouton principal -->
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+            <!-- Boutons de partage et d'enregistrement -->
+            <div class="share-options" style="display: none;">
+                <button onclick="downloadImage('./image/portugal/benefica ext.jpeg')">
+                    <i class="fas fa-download">Telecharger</i>
+                </button>
+            </div>
+        </div> 
+        <div class="maillot-item">
+            <img src="./image/portugal/benefica.jpeg" alt="nice ext" onclick="openLightbox(this)">
+            <p>BENEFICA</p>
+            <!-- Bouton principal -->
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+            <!-- Boutons de partage et d'enregistrement -->
+            <div class="share-options" style="display: none;">
+                <button onclick="downloadImage('./image/portugal/benefica.jpeg')">
+                    <i class="fas fa-download">Telecharger</i>
+                </button>
+            </div>
+        </div>
+        <div class="maillot-item">
+        <img src="./image/portugal/braga.jpeg" alt="nice ext" onclick="openLightbox(this)">
+        <p>BRAGA</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/portugal/braga.jpeg')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/portugal/porto ext.jpeg" alt="nice ext" onclick="openLightbox(this)">
+        <p>PORTO ext</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/portugal/porto ext.jpeg')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/portugal/porto.jpeg" alt="nice ext" onclick="openLightbox(this)">
+        <p>PORTO</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/portugal/porto.jpeg')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/portugal/sporting.jpeg" alt="nice ext" onclick="openLightbox(this)">
+        <p>SPORTING PORTUGAL</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/portugal/sporting.jpeg')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+    </div>
+        <!-- Répéter pour d'autres maillots... -->
+    </div>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="">
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

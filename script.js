@@ -1,8 +1,10 @@
+// Fonction pour basculer les options de partage
 function toggleShareOptions(button) {
-    const shareOptions = button.nextElementSibling; // Trouver l'élément suivant qui contient les options
-    shareOptions.style.display = shareOptions.style.display === "none" ? "flex" : "none"; // Afficher ou cacher les options
+    const shareOptions = button.nextElementSibling;
+    shareOptions.style.display = shareOptions.style.display === 'none' ? 'flex' : 'none';
 }
 
+// Fonction pour télécharger une image
 function downloadImage(imageSrc) {
     const link = document.createElement('a');
     link.href = imageSrc;
@@ -12,32 +14,33 @@ function downloadImage(imageSrc) {
     document.body.removeChild(link);
 }
 
+// Fonction pour télécharger et partager sur WhatsApp
 function downloadAndShareOnWhatsApp(imageSrc) {
-    // Télécharger l'image
     downloadImage(imageSrc);
-
-    // Ouvrir WhatsApp avec un message et l'URL de l'image
-    const message = encodeURIComponent("Découvrez ce maillot : ") + encodeURIComponent(imageSrc);
+    const message = encodeURIComponent("Découvrez ce maillot !");
     const whatsappUrl = `https://wa.me/?text=${message}`;
     window.open(whatsappUrl, '_blank');
 }
 
-// Fonction pour ouvrir la lightbox avec l'image sélectionnée
+// Fonction pour partager sur Telegram
+function shareOnTelegram(imageSrc) {
+    const message = encodeURIComponent("Découvrez ce maillot : ");
+    const url = encodeURIComponent(imageSrc);
+    const telegramUrl = `https://telegram.me/share/url?url=${url}&text=${message}`;
+    window.open(telegramUrl, '_blank');
+}
+
+// Fonction pour ouvrir la lightbox
 function openLightbox(imageElement) {
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightbox-img');
-    
-    // Met à jour l'image dans la lightbox avec celle cliquée
     lightboxImg.src = imageElement.src;
-    
-    // Affiche la lightbox
-    lightbox.style.display = "flex";
+    lightbox.style.display = 'flex';
 }
 
-// Fonction pour fermer la lightbox au clic
+// Fonction pour fermer la lightbox
 function closeLightbox() {
     const lightbox = document.getElementById('lightbox');
-    
-    // Masque la lightbox
-    lightbox.style.display = "none";
+    lightbox.style.display = 'none';
 }
+

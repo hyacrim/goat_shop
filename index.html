@@ -4,17 +4,42 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Dish Site</title>
+    <title>GOAT shirt's</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .video-container {
+            position: relative;
+            width: 80%;
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        video {
+            width: 100%;
+            display: block;
+        }
+
+        .mute-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            z-index: 10;
+        }
+    </style>
 </head>
 <body>
     
     <header>
         <div class="logo">
-            <p><span>Your</span>Dish</p>
+            <p><span>GOAT</span>'Shop</p>
         </div>
         <ul class="menu">
-            <li><a href="#home">Acceuil</a></li>
+            <li><a href="#home">Accueil</a></li>
             <li><a href="#menu">Menu</a></li>
             <li><a href="#about_us">Ligue</a></li>
         </ul>
@@ -23,165 +48,168 @@
         <div class="toggle_menu"></div>
     </header>
 
-    <!-- section acceuil home -->
+    <!-- section accueil home -->
 
     <section id="home">
         <div class="left">
             <h4>Our New Menu</h4>
-            <h1>AFRICAN CHICKEN</h1>
+            <h1>Les meilleurs Maillots à la Demande</h1>
             <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsa sequi eveniet sed quidem reprehenderit libero officiis.</p>
-             <button><a href="#">commander maintenant</a></button>
+             <button><a href="#menu">Réserver maintenant</a></button>
         </div>
         <div class="right">
             <img src="images/img1.png">
         </div>
     </section>
 
-       <!-- section  menu -->
+    <!-- Section Vidéo -->
+    <div class="video-container">
+        <video id="videoPlayer" autoplay playsinline muted>
+            <source src="./video/y2mate.com - adidas Football  Real Madrid Third Jersey Launch_1080p.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <button class="mute-btn" id="muteButton">Unmute</button>
+    </div>
 
-       <section id="menu">
-           <h4 class="mini_title">Ours Menu</h4>
-           <h2 class="title">Popular Menu</h2>
-           <div class="dishes">
-               <div class="dish">
-                   <img src="images/img1.png">
-                   <p>Chicken Orido</p>
-                   <h2>$65.99</h2>
-                   <a href="#">bUY</a>
-               </div>
-               <div class="dish">
-                    <img src="images/img2.png">
-                    <p>Chicken Orido</p>
-                    <h2>$65.99</h2>
-                    <a href="#">bUY</a>
-               </div>
-               <div class="dish">
-                    <img src="images/img3.png">
-                    <p>Chicken Orido</p>
-                    <h2>$65.99</h2>
-                    <a href="#">bUY</a>
-                </div>
-                <div class="dish">
-                        <img src="images/img4.png">
-                        <p>Chicken Orido</p>
-                        <h2>$65.99</h2>
-                        <a href="#">bUY</a>
-                </div>
-                <div class="dish">
-                    <img src="images/img5.png">
-                    <p>Chicken Orido</p>
-                    <h2>$65.99</h2>
-                    <a href="#">bUY</a>
-               </div>
-               <div class="dish">
-                <img src="images/img6.png">
+    <!-- section menu -->
+    <section id="menu">
+        <h4 class="mini_title">Ours Menu</h4>
+        <h2 class="title">Popular Menu</h2>
+        <div class="dishes">
+            <div class="dish">
+                <img src="images/img1.png">
                 <p>Chicken Orido</p>
                 <h2>$65.99</h2>
-                <a href="#">bUY</a>
-           </div>
-
-           </div>
-       </section>
-
-
-       <!-- section about us -->
-
-       <section id="about_us">
-            <h4 class="mini_title">Ligue</h4>
-            <h2 class="title">choisissez votre ligue </h2>
-            <div class="about">
-                <div class="left">
-                    <img src="images/img-about-us.png">
-                </div>
-                <div class="right">
-                    <div class="ligue-container">
-                        <div class="ligue" onclick="redirectToLigue('ligue1')">
-                            <img src="./image/ligue1/all-new-ligue-1-logo (4).jpg" alt="Ligue 1">
-                            <p>Ligue 1</p>
-                        </div>
-                        <div class="ligue" onclick="redirectToLigue('ligue2')">
-                            <img src="images/ligue2.png" alt="Ligue 2">
-                            <p>Ligue 2</p>
-                        </div>
-                        <!-- Répéter pour les autres ligues -->
-                    </div>
-                </div>
+                <a href="#">BUY</a>
             </div>
-       </section>
+            <!-- Répéter pour les autres éléments de menu -->
+        </div>
+    </section>
 
-
-       <!-- section comments -->
-      <section class="comment_section">
-            <h4 class="mini_title">Comments</h4>
-            <h2 class="title"> What People this about us</h2>
-            <div class="comments">
-                <div class="comment">
-                    <div>
-                        <img src="images/img1.png">
-                        <h4>Smith Johnson</h4>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, sequi repellat. Velit, temporibus! Repellat velit delectus vero suscipit ut, consequatur atque molestias obcaecati tenetur dignissimos! Eius eos reprehenderit aspernatur molestiae?</p>
+    <!-- section about us -->
+    <section id="about_us">
+        <h4 class="mini_title">Ligue</h4>
+        <h2 class="title">Choisissez votre ligue</h2>
+        <div class="about">
+            <div class="left">
+                <div class="ligue" onclick="redirectToLigue('autre')">
+                    <img src="./image/cll.jpeg" alt="autres ligue">
+                    <p>Autres ligues</p>
                 </div>
-                <div class="comment">
-                    <div>
-                        <img src="images/img1.png">
-                        <h4>Smith Johnson</h4>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, sequi repellat. Velit, temporibus! Repellat velit delectus vero suscipit ut, consequatur atque molestias obcaecati tenetur dignissimos! Eius eos reprehenderit aspernatur molestiae?</p>
-                </div>
-                <div class="comment">
-                    <div>
-                        <img src="images/img1.png">
-                        <h4>Smith Johnson</h4>
-                    </div>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est, sequi repellat. Velit, temporibus! Repellat velit delectus vero suscipit ut, consequatur atque molestias obcaecati tenetur dignissimos! Eius eos reprehenderit aspernatur molestiae?</p>
-                </div>
-
-
-            </div>
-      </section>
-
-
-
-      <!-- footer -->
-      <footer>
-
-              <div class="service">
-                <img src="images/pin.png" alt="">
-                <h2>Adresses</h2>
-                <p>France-Paris</p>
-                <p>Bénin-Cotonou</p>
-            </div>
-            <div class="service">
-                <img src="images/email.png" alt="">
-                <h2>Emails</h2>
-                <p>email@gmail.com</p>
-                <p>your.dish@gmail.com</p>
-            </div>
-            <div class="service">
-                <img src="images/call.png" alt="">
-                <h2>Numbers</h2>
-                <p>+33 54454544</p>
-            </div>
             
-            <hr>
-          </div>
+            <div class="ligue" onclick="redirectToLigue('pays')">
+                <img src="./image/cm.png" alt="Pays">
+                <p>Pays</p>
+            </div>
+            </div>
+            <div class="right">
+                <div class="ligue-container">
+                    <div class="ligue" onclick="redirectToLigue('./ligue1')">
+                        <img src="./image/ligue1/all-new-ligue-1-logo (4).jpg" alt="Ligue 1">
+                        <p>Ligue 1</p>
+                    </div>
+                    <div class="ligue" onclick="redirectToLigue('Bundesliga')">
+                        <img src="./image/bundesliga/Logo_Bundesliga_2024.svg.png" alt="bundesliga">
+                        <p>Bundesliga</p>
+                    </div>
+                    <div class="ligue" onclick="redirectToLigue('laliga')">
+                        <img src="./image/laliga/laliga.png" alt="laliga">
+                        <p>Laliga</p>
+                    </div>
+                    <div class="ligue" onclick="redirectToLigue('serie')">
+                        <img src="./image/serie a/images.jpeg" alt="laliga">
+                        <p>Serie A</p>
+                    </div>
+                    <div class="ligue" onclick="redirectToLigue('1league')">
+                        <img src="./image/premier league/Capture d’écran 2024-10-11 152237.png" alt="laliga">
+                        <p>Premiere league</p>
+                    </div>
+                </div>
 
-          <p class="footer_text">Réalisé par <span>Faiz Dev</span> | Tous les droits sont réservés.</p>
-      </footer>
+        </div>
+            </div>
+    </section>
 
+    <!-- footer -->
+    <footer>
+        <div class="service">
+            <img src="images/pin.png" alt="colabo">
+            <h2>Adresses</h2>
+            <p>Lomé-Togo</p>
+            <p>Dakar-Sénégal</p>
+            <p>Paris-France</p>
+            <p>NewYork-USA</p>
 
-      <script>
-            function redirectToLigue(ligue) {
-                window.location.href = `${ligue}.html`; // Redirige vers la page de la ligue
+        </div>
+        <div class="service">
+            <img src="images/email.png" alt="">
+            <h2>Email</h2>
+            <p>hyacinthetelou03@gmail.com</p>
+        </div>
+        <div class="service">
+            <img src="" alt="">
+            <h2>Numbers</h2>
+            <p>+228 97593579</p>
+        </div>
+        <hr>
+        <p class="footer_text">Réalisé par <span>Hyacinthe</span> | Tous les droits sont réservés.</p>
+    </footer>
+
+    <script>
+        // Liste des vidéos à faire passer en boucle
+        const videos = [
+            "./video/y2mate.com - adidas Football  Real Madrid Third Jersey Launch_1080p.mp4",
+            "./video/utomp3.com - EA SPORTS FC 25 Official Launch Trailer  For The Club.mp4",
+            "./video/y2mate.com - FC BARCELONA  Présentation du nouveau maillot du Barça 2024  2025_1080pFHR.mp4",
+            "./video/y2mate.com - Le TéFéCé présente son nouveau maillot domicile 20242025 Nike Football _1080p.mp4",
+            "./video/y2mate.com - MAILLOT MANCHESTER CITY 2024 2025_1080p.mp4",
+            "./video/y2mate.com - MAILLOT REAL MADRID 2024 2025_1080p.mp4"
+        ];
+        
+        let currentVideoIndex = 0;
+        const videoPlayer = document.getElementById('videoPlayer');
+        const muteButton = document.getElementById('muteButton');
+        
+        // Fonction pour charger la vidéo suivante
+        function loadNextVideo() {
+            currentVideoIndex = (currentVideoIndex + 1) % videos.length;
+            videoPlayer.src = videos[currentVideoIndex];
+            videoPlayer.play(); // Démarrer automatiquement la prochaine vidéo
+        }
+        
+        // Ajouter un écouteur pour passer à la prochaine vidéo à la fin
+        videoPlayer.addEventListener('ended', loadNextVideo);
+        
+        // Fonction pour couper/activer le son
+        function toggleMute() {
+            if (videoPlayer.muted) {
+                videoPlayer.muted = false;
+                muteButton.textContent = 'Mute'; // Mettre à jour le texte du bouton
+            } else {
+                videoPlayer.muted = true;
+                muteButton.textContent = 'Unmute'; // Mettre à jour le texte du bouton
             }
-          var small_menu = document.querySelector('.toggle_menu')
-          var menu = document.querySelector('.menu')
+        }
+        
+        // Ajouter l'événement de clic pour le bouton mute/unmute
+        muteButton.addEventListener('click', toggleMute);
+        
+        // Forcer la vidéo à démarrer après le chargement
+        videoPlayer.addEventListener('loadeddata', function () {
+            videoPlayer.play();
+        });
 
-          small_menu.onclick = function(){
-               small_menu.classList.toggle('active');
-               menu.classList.toggle('responsive');
-          }
-      </script>
+        function redirectToLigue(ligue) {
+            window.location.href = `${ligue}.html`; // Redirige vers la page de la ligue
+        }
+
+        var small_menu = document.querySelector('.toggle_menu');
+        var menu = document.querySelector('.menu');
+
+        small_menu.onclick = function(){
+            small_menu.classList.toggle('active');
+            menu.classList.toggle('responsive');
+        }
+    </script>
 </body>
 </html>

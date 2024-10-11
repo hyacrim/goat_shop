@@ -101,3 +101,8 @@
 .lightbox:active {
     display: flex; /* Active la lightbox au clic */
 }
+h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    position: relative;
+}

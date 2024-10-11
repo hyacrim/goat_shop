@@ -1,62 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ligue 1 - Maillots</title>
-    <link rel="stylesheet" href="styleligue.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Ligue 1 - Maillots</title>
+        <link rel="stylesheet" href="styleligue.css">
+        <!-- Lien vers FontAwesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    </head>
+    
 <body>
-    <h1>Maillots de la Ligue 1</h1>
+    <h1 class="">Ligue 1</h1>
 
     <div class="maillots-container">
         <!-- Maillot 1 -->
         <div class="maillot-item">
-            <img src="./image/ligue1/psg domicilev.jpeg" alt="PSG extérieur" onclick="openLightbox(this)">
-            <p>PSG ext</p>
-            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Envoyer</button>
-            <div class="share-options" style="display: none;">
-                <button onclick="downloadAndShareOnWhatsApp('./image/ligue1/psg domicilev.jpeg')">
-                    <i class="fas fa-download"></i> Envoyer sur WhatsApp
-                </button>
-            </div>
-        </div>
-        
-        <!-- Maillot 2 -->
-        <div class="maillot-item">
-            <img src="./image/ligue1/psg_exterieur.jpg" alt="PSG extérieur" onclick="openLightbox(this)">
-            <p>PSG ext</p>
-            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Envoyer</button>
-            <div class="share-options" style="display: none;">
-                <button onclick="downloadAndShareOnWhatsApp('./image/ligue1/psg_exterieur.jpg')">
-                    <i class="fas fa-download"></i> Envoyer sur WhatsApp
-                </button>
-            </div>
-        </div>
+            <img src="./image/ligue1/psg domicilev.jpeg" alt="PSG domicile" onclick="openLightbox(this)">
+            <p>PSG </p>
+            <!-- Bouton principal -->
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
 
-        <!-- Autres maillots -->
+            <!-- Boutons de partage et d'enregistrement -->
+            <div class="share-options" style="display: none;">
+                <button onclick="downloadImage('./image/ligue1/psg domicilev.jpeg')">
+                    <i class="fas fa-download">Telecharger</i>
+                </button>
+            </div>
+        </div>
         <div class="maillot-item">
-            <img src="./image/ligue1/nice_maison.jpg" alt="NICE maison" onclick="openLightbox(this)">
+            <img src="./image/ligue1/psg exterieur.jpg" alt="PSG exterieur" onclick="openLightbox(this)">
+            <p>PSG ext</p>
+            <!-- Bouton principal -->
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+            <!-- Boutons de partage et d'enregistrement -->
+            <div class="share-options" style="display: none;">
+                <button onclick="downloadImage('./image/ligue1/psg exterieur.jpg')">
+                    <i class="fas fa-download">Telecharger</i>
+                </button>
+            </div>
+        </div>
+        <div class="maillot-item">
+            <img src="./image/ligue1/nice maison.jpg" alt="nice ext" onclick="openLightbox(this)">
             <p>NICE ext</p>
-            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Envoyer</button>
+            <!-- Bouton principal -->
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+            <!-- Boutons de partage et d'enregistrement -->
             <div class="share-options" style="display: none;">
-                <button onclick="downloadAndShareOnWhatsApp('./image/ligue1/nice_maison.jpg')">
-                    <i class="fas fa-download"></i> Envoyer sur WhatsApp
+                <button onclick="downloadImage('./image/ligue1/nice maison.jpg')">
+                    <i class="fas fa-download">Telecharger</i>
                 </button>
-            </div>
         </div>
-        
+        </div>
         <div class="maillot-item">
-            <img src="./image/ligue1/monaco.png" alt="Monaco" onclick="openLightbox(this)">
+            <img src="./image/ligue1/monaco .png" alt="nice ext" onclick="openLightbox(this)">
             <p>MONACO</p>
-            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Envoyer</button>
+            <!-- Bouton principal -->
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+            <!-- Boutons de partage et d'enregistrement -->
             <div class="share-options" style="display: none;">
-                <button onclick="downloadAndShareOnWhatsApp('./image/ligue1/monaco.png')">
-                    <i class="fas fa-download"></i> Envoyer sur WhatsApp
+                <button onclick="downloadImage('./image/ligue1/monaco .png')">
+                    <i class="fas fa-download">Telecharger</i>
                 </button>
             </div>
         </div>
+        <div class="maillot-item">
+            <img src="./image/ligue1/brest maison.png" alt="nice ext" onclick="openLightbox(this)">
+            <p>BREST</p>
+            <!-- Bouton principal -->
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+            <!-- Boutons de partage et d'enregistrement -->
+            <div class="share-options" style="display: none;">
+                <button onclick="downloadImage('./image/ligue1/brest maison.png')">
+                    <i class="fas fa-download">Telecharger</i>
+                </button>
+            </div>
+        </div>
+        <div class="maillot-item">
+        <img src="./image/ligue1/brest ext.png" alt="nice ext" onclick="openLightbox(this)">
+        <p>BREST ext</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/brest ext.png')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/lyon maison.png" alt="nice ext" onclick="openLightbox(this)">
+        <p>LYON</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/lyon maison.png')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/nice ext.jpg" alt="nice ext" onclick="openLightbox(this)">
+        <p>MARSEILLE</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/nice ext.jpg')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/marseille maisson.png" alt="nice ext" onclick="openLightbox(this)">
+        <p>MARSEILLE</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/marseille maisson.png')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/marseille ext.png" alt="nice ext" onclick="openLightbox(this)">
+        <p>MARSEILLE Ext</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/marseille ext.png')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/lile maison.png" alt="nice ext" onclick="openLightbox(this)">
+        <p>LILLE</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/lile maison.png')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/monaco ext .png" alt="nice ext" onclick="openLightbox(this)">
+        <p>MONACO ext 1</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/monaco ext .png')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/monaco ext2 .png" alt="nice ext" onclick="openLightbox(this)">
+        <p>MONACO ext 2</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/monaco ext2 .png')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/reims ext.jpg" alt="nice ext" onclick="openLightbox(this)">
+        <p>REIMS</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/reims ext.jpg')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+       <div class="maillot-item">
+        <img src="./image/ligue1/rennes.png" alt="nice ext" onclick="openLightbox(this)">
+        <p>RENNES</p>
+        <!-- Bouton principal -->
+        <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+
+        <!-- Boutons de partage et d'enregistrement -->
+        <div class="share-options" style="display: none;">
+            <button onclick="downloadImage('./image/ligue1/rennes.png')">
+                <i class="fas fa-download">Telecharger</i>
+            </button>
+        </div>
+       </div>
+    </div>
         <!-- Répéter pour d'autres maillots... -->
     </div>
 
