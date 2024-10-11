@@ -41,7 +41,9 @@
         <ul class="menu">
             <li><a href="#home">Accueil</a></li>
             <li><a href="#menu">Menu</a></li>
-            <li><a href="#about_us">Ligue</a></li>
+            <li><a href="#ligue">Ligue</a></li>
+            <li><a href="./recherche.html">rechercher</a></li>
+            <li><a href="#about_us">A propos de nous</a></li>
         </ul>
 
         <!-- menu responsive -->
@@ -75,19 +77,44 @@
     <section id="menu">
         <h4 class="mini_title">Ours Menu</h4>
         <h2 class="title">Popular Menu</h2>
-        <div class="dishes">
-            <div class="dish">
-                <img src="images/img1.png">
-                <p>Chicken Orido</p>
-                <h2>$65.99</h2>
-                <a href="#">BUY</a>
+
+        <div class="carousel-container">
+            <div class="carousel" id="carousel">
+                <!-- Product 1 -->
+                <div class="carousel-item">
+                    <img src="images/product1.jpg" alt="Produit 1">
+                    <p>Produit 1 - $49.99</p>
+                </div>
+                <!-- Product 2 -->
+                <div class="carousel-item">
+                    <img src="images/product2.jpg" alt="Produit 2">
+                    <p>Produit 2 - $59.99</p>
+                </div>
+                <!-- Product 3 -->
+                <div class="carousel-item">
+                    <img src="images/product3.jpg" alt="Produit 3">
+                    <p>Produit 3 - $39.99</p>
+                </div>
+                <!-- Product 4 -->
+                <div class="carousel-item">
+                    <img src="images/product4.jpg" alt="Produit 4">
+                    <p>Produit 4 - $79.99</p>
+                </div>
+                <!-- Product 5 -->
+                <div class="carousel-item">
+                    <img src="images/product5.jpg" alt="Produit 5">
+                    <p>Produit 5 - $89.99</p>
+                </div>
             </div>
-            <!-- Répéter pour les autres éléments de menu -->
+            
+            <!-- Boutons de navigation -->
+            <button class="carousel-prev" id="prevBtn">&#10094;</button>
+            <button class="carousel-next" id="nextBtn">&#10095;</button>
         </div>
     </section>
 
     <!-- section about us -->
-    <section id="about_us">
+    <section id="ligue">
         <h4 class="mini_title">Ligue</h4>
         <h2 class="title">Choisissez votre ligue</h2>
         <div class="about">
@@ -132,8 +159,8 @@
 
     <!-- footer -->
     <footer>
-        <div class="service">
-            <img src="images/pin.png" alt="colabo">
+        <div class="service" id="about_us">
+            <img src="images/pin.png" alt="">
             <h2>Adresses</h2>
             <p>Lomé-Togo</p>
             <p>Dakar-Sénégal</p>
@@ -156,6 +183,70 @@
     </footer>
 
     <script>
+        
+
+const carousel = document.getElementById('carousel');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
+
+let currentIndex = 0;
+const items = document.querySelectorAll('.carousel-item');
+const totalItems = items.length;
+let autoSlideInterval;
+
+// Fonction pour afficher l'élément suivant
+function showNextItem() {
+    currentIndex = (currentIndex + 1) % totalItems;
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Fonction pour afficher l'élément précédent
+function showPrevItem() {
+    currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
+// Événement pour les boutons de navigation
+nextBtn.addEventListener('click', () => {
+    clearInterval(autoSlideInterval);
+    showNextItem();
+    startAutoSlide();
+});
+
+prevBtn.addEventListener('click', () => {
+    clearInterval(autoSlideInterval);
+    showPrevItem();
+    startAutoSlide();
+});
+
+// Fonction pour démarrer le défilement automatique
+function startAutoSlide() {
+    autoSlideInterval = setInterval(showNextItem, 3000);
+}
+
+// Initialisation du défilement automatique
+startAutoSlide();
+
+// Ajout du glissement tactile pour les appareils mobiles
+let startX = 0;
+
+carousel.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    clearInterval(autoSlideInterval); // Stopper le défilement automatique pendant le glissement
+});
+
+carousel.addEventListener('touchmove', (e) => {
+    const touch = e.touches[0];
+    const moveX = touch.clientX - startX;
+
+    if (moveX > 50) {
+        showPrevItem();
+        startAutoSlide();
+    } else if (moveX < -50) {
+        showNextItem();
+        startAutoSlide();
+    }
+});
         // Liste des vidéos à faire passer en boucle
         const videos = [
             "./video/y2mate.com - adidas Football  Real Madrid Third Jersey Launch_1080p.mp4",

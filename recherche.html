@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recherche de Maillots</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .search-container {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            padding: 10px;
+            width: 50%;
+            font-size: 16px;
+        }
+
+        .maillots-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .maillot-item {
+            margin: 10px;
+            text-align: center;
+            border: 1px solid #ccc;
+            padding: 10px;
+            width: 200px;
+        }
+
+        .maillot-item img {
+            width: 100%;
+            height: auto;
+            cursor: pointer;
+        }
+
+        .share-options {
+            margin-top: 10px;
+        }
+
+        .envoyer-btn {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1 style="text-align:center;">Recherche de Maillots</h1>
+
+    <!-- Barre de recherche -->
+    <div class="search-container">
+        <input type="text" id="searchBar" class="search-bar" placeholder="Rechercher un maillot..." onkeyup="searchMaillots()">
+    </div>
+
+    <!-- Section contenant les maillots -->
+    <div class="maillots-container" id="maillotsContainer">
+        <div class="maillot-item" data-name="SPORTING PORTUGAL">
+            <img src="./image/portugal/sporting.jpeg" alt="SPORTING PORTUGAL" onclick="openLightbox(this)">
+            <p>SPORTING PORTUGAL</p>
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+            <div class="share-options" style="display: none;">
+                <button onclick="downloadImage('./image/portugal/sporting.jpeg')">Télécharger</button>
+            </div>
+        </div>
+        <div class="maillot-item" data-name="FC PORTO">
+            <img src="./image/portugal/porto.jpeg" alt="FC PORTO" onclick="openLightbox(this)">
+            <p>FC PORTO</p>
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+            <div class="share-options" style="display: none;">
+                <button onclick="downloadImage('./image/portugal/porto.jpeg')">Télécharger</button>
+            </div>
+        </div>
+        <div class="maillot-item" data-name="BENFICA LISBONNE">
+            <img src="./image/portugal/benfica.jpeg" alt="BENFICA LISBONNE" onclick="openLightbox(this)">
+            <p>BENFICA LISBONNE</p>
+            <button class="envoyer-btn" onclick="toggleShareOptions(this)">Avoir</button>
+            <div class="share-options" style="display: none;">
+                <button onclick="downloadImage('./image/portugal/benfica.jpeg')">Télécharger</button>
+            </div>
+        </div>
+        <!-- Ajoute d'autres maillots ici -->
+    </div>
+
+    <script>
+        // Fonction pour rechercher des maillots en fonction du texte entré
+        function searchMaillots() {
+            const searchInput = document.getElementById('searchBar').value.toLowerCase();
+            const maillots = document.querySelectorAll('.maillot-item');
+
+            maillots.forEach(maillot => {
+                const maillotName = maillot.getAttribute('data-name').toLowerCase();
+                if (maillotName.includes(searchInput)) {
+                    maillot.style.display = 'block'; // Affiche les maillots correspondants
+                } else {
+                    maillot.style.display = 'none'; // Cache ceux qui ne correspondent pas
+                }
+            });
+        }
+
+        // Fonction pour basculer l'affichage des options de partage
+        function toggleShareOptions(button) {
+            const shareOptions = button.nextElementSibling; // Trouver l'élément suivant qui contient les options
+            if (shareOptions.style.display === "none") {
+                shareOptions.style.display = "block"; // Afficher les options
+            } else {
+                shareOptions.style.display = "none"; // Cacher les options si elles sont déjà affichées
+            }
+        }
+
+        // Fonction pour télécharger une image
+        function downloadImage(imageSrc) {
+            const link = document.createElement('a');
+            link.href = imageSrc;
+            link.download = imageSrc.substring(imageSrc.lastIndexOf('/') + 1);
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Fonction pour ouvrir une lightbox (vous pouvez ajouter une lightbox séparée si nécessaire)
+        function openLightbox(imageElement) {
+            alert('Lightbox: ' + imageElement.alt); // Simule une lightbox (à personnaliser)
+        }
+    </script>
+
+</body>
+</html>

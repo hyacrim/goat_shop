@@ -44,3 +44,7 @@ function closeLightbox() {
     lightbox.style.display = 'none';
 }
 
+
+
+
+
