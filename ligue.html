@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ligue</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    
+    <h2 class="title">Choisissez votre ligue</h2>
+    <div class="about">
+        <div class="left">
+        
+        <div class="ligue" onclick="redirectToLigue('pays')">
+            <img src="./image/cm.png" alt="Pays">
+            <p>Pays</p>
+        </div>
+        </div>
+        <div class="right">
+            <div class="ligue-container">
+                <div class="ligue" onclick="redirectToLigue('./ligue1')">
+                    <img src="./image/ligue1/all-new-ligue-1-logo (4).jpg" alt="Ligue 1">
+                    <p>Ligue 1</p>
+                </div>
+                <div class="ligue" onclick="redirectToLigue('Bundesliga')">
+                    <img src="./image/bundesliga/Logo_Bundesliga_2024.svg.png" alt="bundesliga">
+                    <p>Bundesliga</p>
+                </div>
+                <div class="ligue" onclick="redirectToLigue('laliga')">
+                    <img src="./image/laliga/laliga.png" alt="laliga">
+                    <p>Laliga</p>
+                </div>
+                <div class="ligue" onclick="redirectToLigue('serie')">
+                    <img src="./image/serie a/images.jpeg" alt="laliga">
+                    <p>Serie A</p>
+                </div>
+                <div class="ligue" onclick="redirectToLigue('1league')">
+                    <img src="./image/premier league/Capture d’écran 2024-10-11 152237.png" alt="laliga">
+                    <p>Premiere league</p>
+                </div>
+                <div class="ligue" onclick="redirectToLigue('portugal')">
+                    <img src="./image/portugal/portugal.png" alt="autres ligue">
+                    <p>Liga portugal</p>
+                </div>
+                <div class="ligue" onclick="redirectToLigue('belgique')">
+                    <img src="./image/belgique/belgique.png" alt="autres ligue">
+                    <p>jupiler pro league</p>
+                </div>
+                <div class="ligue" onclick="redirectToLigue('ecosse')">
+                    <img src="./image/ecosse/eccose.png" alt="autres ligue">
+                    <p>premiership</p>
+                </div>
+                <div class="ligue" onclick="redirectToLigue('as')">
+                    <img src="./image/as/as.png" alt="autres ligue">
+                    <p>Aribic league</p>
+                </div>
+            </div>
+
+    </div>
+        </div>
+<script>
+    function redirectToLigue(ligue) {
+        window.location.href = `${ligue}.html`; // Redirige vers la page de la ligue
+    }
+
+    var small_menu = document.querySelector('.toggle_menu');
+    var menu = document.querySelector('.menu');
+
+    small_menu.onclick = function(){
+        small_menu.classList.toggle('active');
+        menu.classList.toggle('responsive');
+    }
+</script>
+</body>
+</html>

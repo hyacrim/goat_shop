@@ -1,0 +1,110 @@
+/* Styles globaux */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+h2.title {
+    text-align: center;
+    font-size: 2rem;
+    color: #333;
+    margin: 20px 0;
+}
+
+/* Conteneur pour la section 'about' */
+.about {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+}
+
+/* Section gauche */
+.left {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Section droite (ligue-container) */
+.right {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Conteneur des ligues dans la partie droite */
+.ligue-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+/* Chaque carte de ligue */
+.ligue {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+    width: calc(25% - 20px); /* 4 éléments par ligne avec un écart */
+}
+
+.ligue img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-bottom: 1px solid #ddd;
+}
+
+.ligue p {
+    font-size: 1.1rem;
+    color: #333;
+    padding: 10px 0;
+}
+
+/* Effets au survol */
+.ligue:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive design pour tablettes et mobiles */
+@media (max-width: 1024px) {
+    .ligue {
+        width: calc(33.33% - 20px); /* 3 éléments par ligne sur les tablettes */
+    }
+}
+
+@media (max-width: 768px) {
+    .ligue {
+        width: calc(50% - 20px); /* 2 éléments par ligne sur les petits écrans */
+    }
+}
+
+@media (max-width: 480px) {
+    .ligue {
+        width: 100%; /* 1 élément par ligne sur les très petits écrans */
+    }
+
+    .about {
+        flex-direction: column; /* Les sections se superposent sur mobile */
+        align-items: center;
+    }
+
+    .left, .right {
+        width: 100%;
+    }
+
+    .ligue-container {
+        justify-content: center;
+    }
+}

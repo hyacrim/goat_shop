@@ -377,6 +377,7 @@ footer .services_list {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
+    
 }
 .service img {
     width: 40px;
@@ -410,6 +411,7 @@ hr {
 .footer_text span {
     color: #27ae60;
 }
+
 .toggle_menu {
     display: none;
 }
@@ -640,32 +642,39 @@ h1 {
 
 
 
-
         .carousel-container {
             position: relative;
             width: 80%;
             margin: 0 auto;
             overflow: hidden;
         }
-
+        
         .carousel {
             display: flex;
             transition: transform 0.5s ease-in-out;
         }
-
+        
         .carousel-item {
             min-width: 100%;
             box-sizing: border-box;
+            display: flex; /* Center image within the item */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
         }
-
+        
         .carousel-item img {
-            width: 100%;
-            height: auto;
+            width: auto; /* Keep the aspect ratio */
+            max-width: 80%; /* Limit the width */
+            max-height: 300px; /* Limit the height */
+            height: auto; /* Maintain aspect ratio */
             display: block;
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
         }
-
+        
         /* Navigation buttons */
-        .carousel-prev, .carousel-next {
+        .carousel-prev,
+        .carousel-next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
@@ -676,11 +685,12 @@ h1 {
             cursor: pointer;
             z-index: 10;
         }
-
+        
         .carousel-prev {
             left: 10px;
         }
-
+        
         .carousel-next {
             right: 10px;
         }
+        
