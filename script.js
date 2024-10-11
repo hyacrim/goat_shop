@@ -1,45 +1,27 @@
 function toggleShareOptions(button) {
-        const shareOptions = button.nextElementSibling; // Trouver l'élément suivant qui contient les options
-        if (shareOptions.style.display === "none") {
-            shareOptions.style.display = "flex"; // Afficher les options
-        } else {
-            shareOptions.style.display = "none"; // Cacher les options si elles sont déjà affichées
-        }
-    }
+    const shareOptions = button.nextElementSibling; // Trouver l'élément suivant qui contient les options
+    shareOptions.style.display = shareOptions.style.display === "none" ? "flex" : "none"; // Afficher ou cacher les options
+}
 
-    function downloadImage(imageSrc) {
-        const link = document.createElement('a');
-        link.href = imageSrc;
-        link.download = imageSrc.substring(imageSrc.lastIndexOf('/') + 1);
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-    }
-    
-    function downloadAndShareOnWhatsApp(imageSrc) {
-        // Télécharger l'image
-        downloadImage(imageSrc);
-    
-        // Ouvrir WhatsApp avec un message
-        const message = encodeURIComponent("Découvrez ce maillot !");
-        const whatsappUrl = `https://wa.me/?text=${message}`;
-        window.open(whatsappUrl, '_blank');
-    }
-    
-    function toggleShareOptions(button) {
-        const shareOptions = button.nextElementSibling; // Récupère le div qui contient les options de partage
-        shareOptions.style.display = shareOptions.style.display === 'none' ? 'block' : 'none';
-    }
-    
+function downloadImage(imageSrc) {
+    const link = document.createElement('a');
+    link.href = imageSrc;
+    link.download = imageSrc.substring(imageSrc.lastIndexOf('/') + 1);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
 
-    
-    function shareOnTelegram(imageSrc) {
-        const message = encodeURIComponent("Découvrez ce maillot : ");
-        const url = encodeURIComponent(imageSrc);
-        const telegramUrl = `https://telegram.me/share/url?url=${url}&text=${message}`;
-        window.open(telegramUrl, '_blank');
-    }
-    
+function downloadAndShareOnWhatsApp(imageSrc) {
+    // Télécharger l'image
+    downloadImage(imageSrc);
+
+    // Ouvrir WhatsApp avec un message et l'URL de l'image
+    const message = encodeURIComponent("Découvrez ce maillot : ") + encodeURIComponent(imageSrc);
+    const whatsappUrl = `https://wa.me/?text=${message}`;
+    window.open(whatsappUrl, '_blank');
+}
+
 // Fonction pour ouvrir la lightbox avec l'image sélectionnée
 function openLightbox(imageElement) {
     const lightbox = document.getElementById('lightbox');
