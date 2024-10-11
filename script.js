@@ -15,12 +15,16 @@ function toggleShareOptions(button) {
         link.click();
         document.body.removeChild(link);
     }
+    function downloadAndShareOnWhatsApp(imageSrc) {
+        // Télécharger l'image
+        downloadImage(imageSrc);
     
-    function shareOnWhatsApp() {
+        // Ouvrir WhatsApp avec un message
         const message = encodeURIComponent("Découvrez ce maillot !");
         const whatsappUrl = `https://wa.me/?text=${message}`;
         window.open(whatsappUrl, '_blank');
     }
+    
 
     
     function shareOnTelegram(imageSrc) {

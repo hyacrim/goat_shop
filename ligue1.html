@@ -15,21 +15,16 @@
     <div class="maillots-container">
         <!-- Maillot 1 -->
         <div class="maillot-item">
-            <img src="./image/ligue1/psg domicilev.jpeg" alt="PSG domicile" onclick="openLightbox(this)">
-            <p>PSG</p>
-            <!-- Bouton principal -->
+            <img src="./image/ligue1/psg_exterieur.jpg" alt="PSG extérieur" onclick="openLightbox(this)">
+            <p>PSG ext</p>
             <button class="envoyer-btn" onclick="toggleShareOptions(this)">Envoyer</button>
-        
-            <!-- Boutons de partage et d'enregistrement -->
             <div class="share-options" style="display: none;">
-                <button onclick="downloadImage('./image/ligue1/psg_domicilev.jpeg')">
-                    <i class="fas fa-download"></i> Télécharger
-                </button>
-                <button onclick="shareOnWhatsApp()">
-                    <i class="fab fa-whatsapp"></i> Envoyer sur WhatsApp
+                <button onclick="downloadAndShareOnWhatsApp('./image/ligue1/psg_exterieur.jpg')">
+                    <i class="fas fa-download"></i> Envoyer sur WhatsApp
                 </button>
             </div>
         </div>
+        
         
         <div class="maillot-item">
             <img src="./image/ligue1/psg exterieur.jpg" alt="PSG exterieur" onclick="openLightbox(this)">
