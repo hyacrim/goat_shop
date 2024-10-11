@@ -14,19 +14,20 @@ function toggleShareOptions(button) {
         link.click();
     }
 
-    function shareOnWhatsApp(itemName) {
-        const url = window.location.href;
-        const message = `Découvrez ${itemName} ici : ${url}`;
-        const whatsappUrl = `https://wa.me/?text=${encodeURIComponent(message)}`;
+    function shareOnWhatsApp(imageSrc) {
+        const message = encodeURIComponent("Découvrez ce maillot : ");
+        const url = encodeURIComponent(imageSrc);
+        const whatsappUrl = `https://wa.me/?text=${message}${url}`;
         window.open(whatsappUrl, '_blank');
     }
-
-    function shareOnTelegram(itemName) {
-        const url = window.location.href;
-        const message = `Découvrez ${itemName} ici : ${url}`;
-        const telegramUrl = `https://t.me/share/url?url=${encodeURIComponent(url)}&text=${encodeURIComponent(message)}`;
+    
+    function shareOnTelegram(imageSrc) {
+        const message = encodeURIComponent("Découvrez ce maillot : ");
+        const url = encodeURIComponent(imageSrc);
+        const telegramUrl = `https://telegram.me/share/url?url=${url}&text=${message}`;
         window.open(telegramUrl, '_blank');
     }
+    
 // Fonction pour ouvrir la lightbox avec l'image sélectionnée
 function openLightbox(imageElement) {
     const lightbox = document.getElementById('lightbox');
