@@ -15,6 +15,7 @@ function toggleShareOptions(button) {
         link.click();
         document.body.removeChild(link);
     }
+    
     function downloadAndShareOnWhatsApp(imageSrc) {
         // Télécharger l'image
         downloadImage(imageSrc);
@@ -23,6 +24,11 @@ function toggleShareOptions(button) {
         const message = encodeURIComponent("Découvrez ce maillot !");
         const whatsappUrl = `https://wa.me/?text=${message}`;
         window.open(whatsappUrl, '_blank');
+    }
+    
+    function toggleShareOptions(button) {
+        const shareOptions = button.nextElementSibling; // Récupère le div qui contient les options de partage
+        shareOptions.style.display = shareOptions.style.display === 'none' ? 'block' : 'none';
     }
     
 
